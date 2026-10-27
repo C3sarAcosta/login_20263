@@ -1,5 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:login_20263/screens/cheking.dart';
+import 'package:login_20263/screens/login.dart';
+import 'package:login_20263/screens/principal.dart';
 import 'package:login_20263/services/auth_service.dart';
 import 'package:provider/provider.dart';
 
@@ -33,6 +36,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 163, 39, 240)),
         useMaterial3: true
       ),
+      initialRoute: 'checking',
+      routes: {
+        'login': (_) => LoginPage(),
+        'home' : (_) => PrincipalScr(),
+        'checking' : (_) => CheckAuthScreen()
+      },
     );
   }
 }
