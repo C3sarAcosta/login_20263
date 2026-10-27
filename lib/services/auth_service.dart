@@ -1,15 +1,13 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
-import 'package:provider/provider.dart';
 
-class AuthService extends ChangeNotifierProvider {
+class AuthService extends ChangeNotifier {
   final String _baseUrl = 'https://receta20263it.somee.com/api';
 
-  final storage = new FlutterSecureStorage();
-
-  new value({required super.value}) : super.value();
+  final FlutterSecureStorage storage = const FlutterSecureStorage();
 
   Future<String?> createdUser(String email, String password) async {
     final Map<String, dynamic> authData = {

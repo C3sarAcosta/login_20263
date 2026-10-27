@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:login_20263/services/auth_service.dart';
 import 'package:provider/provider.dart';
 
 void main(){
@@ -7,7 +8,7 @@ void main(){
 }
 
 class AppState extends StatelessWidget {
-  const new({super.key});
+  const AppState({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class AppState extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => AuthService()),
       ],
-      child: MyApp(),
+      child: const MyApp(),
     );
   }
 }

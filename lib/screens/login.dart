@@ -5,7 +5,7 @@ import 'package:login_20263/services/notifications_service.dart';
 import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
-  const new({super.key});
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {

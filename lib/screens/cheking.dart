@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:login_20263/screens/login.dart';
+import 'package:login_20263/screens/principal.dart';
 import 'package:login_20263/services/auth_service.dart';
 import 'package:provider/provider.dart';
 
@@ -14,15 +16,15 @@ class CheckAuthScreen extends StatelessWidget {
         child: FutureBuilder(
           future: authService.readToken(),
           builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-            if(!snapshot.hasData) return Text('');
-            if(snapshot.hasData == ''){
+            if (!snapshot.hasData) return const Text('');
+            if (snapshot.data == '') {
               Future.microtask(() {
                 Navigator.pushReplacement(
                   context,
                   PageRouteBuilder(
-                    pageBuilder: (_, __, ___) => LoginPage(),
-                    transitionDuration: Duration(seconds: 0)
-                  )
+                    pageBuilder: (_, __, ___) => const LoginPage(),
+                    transitionDuration: const Duration(seconds: 0),
+                  ),
                 );
               });
             } else {
@@ -30,13 +32,13 @@ class CheckAuthScreen extends StatelessWidget {
                 Navigator.pushReplacement(
                   context,
                   PageRouteBuilder(
-                    pageBuilder: (_, __, ___) => PrincipalScr(),
-                    transitionDuration: Duration(seconds: 0)
-                  )
+                    pageBuilder: (_, __, ___) => const PrincipalScr(),
+                    transitionDuration: const Duration(seconds: 0),
+                  ),
                 );
               });
             }
-            return Container();
+            return const SizedBox();
           },
         ),
       ),

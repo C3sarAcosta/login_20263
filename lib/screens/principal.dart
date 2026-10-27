@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PrincipalScr extends StatelessWidget {
-  const new({super.key});
+  const PrincipalScr({super.key});
 
   @override
   Widget build(BuildContext context) {
